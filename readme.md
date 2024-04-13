@@ -18,7 +18,7 @@
 </div>
 
 <div align="center">
-  A <a href="https://github.com/rehypejs/rehype">rehype</d> plugin for optimizing inline SVGs using SVGO.
+  A <a href="https://github.com/rehypejs/rehype">rehype</a> plugin for optimizing inline SVGs using SVGO.
 </div>
 
 ## Install
