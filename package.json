@@ -7,7 +7,17 @@
     "url": "https://tomeraberba.ch"
   },
   "description": "A rehype plugin for optimizing inline SVGs using SVGO.",
-  "keywords": [],
+  "keywords": [
+    "html",
+    "minify",
+    "optimize",
+    "plugin",
+    "rehype",
+    "rehype-plugin",
+    "svg",
+    "svgo",
+    "unified"
+  ],
   "homepage": "https://github.com/TomerAberbach/rehype-svgo",
   "repository": "TomerAberbach/rehype-svgo",
   "bugs": {
