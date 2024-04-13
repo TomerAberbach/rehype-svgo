@@ -18,14 +18,8 @@
 </div>
 
 <div align="center">
-  A rehype plugin for optimizing inline SVGs using SVGO.
+  A <a href="https://github.com/rehypejs/rehype">rehype</d> plugin for optimizing inline SVGs using SVGO.
 </div>
-
-## Features
-
-- **Wow:** so amazing
-- **Amazing:** so wow
-- **Fancy:** has a tie and everything
 
 ## Install
 
@@ -36,10 +30,25 @@ $ npm i rehype-svgo
 ## Usage
 
 ```js
+import rehypeParse from 'rehype-parse'
 import rehypeSvgo from 'rehype-svgo'
+import rehypeStringify from 'rehype-stringify'
+import { read } from 'to-vfile'
+import { unified } from 'unified'
 
-console.log(rehypeSvgo())
-//=> Hello World!
+const file = await unified()
+  .use(rehypeParse)
+  .use(rehypeSvgo, {
+    // https://github.com/svg/svgo#configuration
+    svgoConfig: {
+      multipass: true,
+      plugins: [`preset-default`],
+    },
+  })
+  .use(rehypeStringify)
+  .process(await read(`index.html`))
+
+console.log(String(file))
 ```
 
 ## Contributing
