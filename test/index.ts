@@ -30,7 +30,7 @@ const htmls = await Promise.all(
   })),
 )
 
-test.each(htmls)(`rehypeSvgo works - $name`, ({ html }) => {
+test.each(htmls)(`rehypeSvgo works with config - $name`, ({ html }) => {
   const optimizedHtml = String(
     unified()
       .use(rehypeParse)
@@ -45,6 +45,18 @@ test.each(htmls)(`rehypeSvgo works - $name`, ({ html }) => {
           ],
         },
       })
+      .use(rehypeStringify)
+      .processSync(html),
+  )
+
+  expect(optimizedHtml).toMatchSnapshot()
+})
+
+test.each(htmls)(`rehypeSvgo works without config - $name`, ({ html }) => {
+  const optimizedHtml = String(
+    unified()
+      .use(rehypeParse)
+      .use(rehypeSvgo)
       .use(rehypeStringify)
       .processSync(html),
   )

@@ -42,16 +42,8 @@ const rehypeSvgo: Plugin<
 
       // Parsing may add extraneous html, head, and body tags. Find the actual
       // SVG element.
-      const svgElement = find(optimizedAst, { tagName: `svg` })
-      if (!svgElement) {
-        throw new Error(`Expected SVG element`)
-      }
-
-      // The SVG element is never the root. There's always a root node.
-      if (!parent) {
-        throw new Error(`Expected parent`)
-      }
-      parent.children.splice(index!, 1, svgElement as Element)
+      const svgElement = find(optimizedAst, { tagName: `svg` })!
+      parent!.children.splice(index!, 1, svgElement as Element)
     })
 }
 
