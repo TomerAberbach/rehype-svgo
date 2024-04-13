@@ -16,6 +16,7 @@
     "rehype-plugin",
     "svg",
     "svgo",
+    "svgomg",
     "unified"
   ],
   "homepage": "https://github.com/TomerAberbach/rehype-svgo",

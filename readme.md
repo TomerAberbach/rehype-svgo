@@ -51,6 +51,10 @@ const file = await unified()
 console.log(String(file))
 ```
 
+Visit [`unified`](https://github.com/unifiedjs/unified)'s documentation for how
+to use plugins and [`svgo`](https://github.com/svg/svgo#configuration)'s
+documentation for how to configuration options.
+
 ## Contributing
 
 Stars are always welcome!
