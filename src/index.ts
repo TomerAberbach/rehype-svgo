@@ -49,7 +49,11 @@ const rehypeSvgo: Plugin<
 
 /** Options for {@link rehypeSvgo}. */
 export type RehypeSvgoOptions = {
-  /** The config to pass to `svgo`. Defauls to the default `svgo` config. */
+  /**
+   * The config to pass to `svgo`. Defauls to the default `svgo` config.
+   *
+   * See https://github.com/svg/svgo#configuration for configuration options.
+   */
   svgoConfig?: Config
 }
 
