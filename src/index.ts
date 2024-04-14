@@ -29,7 +29,7 @@ import { find } from 'unist-util-find'
  * `svgo`.
  */
 const rehypeSvgo: Plugin<
-  [(RehypeSvgoOptions | null | undefined)?],
+  [(Readonly<RehypeSvgoOptions> | null | undefined)?],
   Root,
   Root
 > = options => {
