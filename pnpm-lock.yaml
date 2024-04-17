@@ -22,12 +22,12 @@ dependencies:
   '@types/hast':
     specifier: ^3.0.4
     version: 3.0.4
+  hast-util-from-html-isomorphic:
+    specifier: ^2.0.0
+    version: 2.0.0
   hast-util-to-html:
     specifier: ^9.0.1
     version: 9.0.1
-  rehype-parse:
-    specifier: ^9.0.0
-    version: 9.0.0
   unified:
     specifier: ^11.0.4
     version: 11.0.4
@@ -54,6 +54,9 @@ devDependencies:
   prettier:
     specifier: ^3.2.5
     version: 3.2.5
+  rehype-parse:
+    specifier: ^9.0.0
+    version: 9.0.0
   rehype-stringify:
     specifier: ^10.0.0
     version: 10.0.0
@@ -7589,6 +7592,29 @@ packages:
       function-bind: 1.1.2
     dev: true
 
+  /hast-util-from-dom@5.0.0:
+    resolution:
+      {
+        integrity: sha512-d6235voAp/XR3Hh5uy7aGLbM3S4KamdW0WEgOaU1YoewnuYw4HXb5eRtv9g65m/RFGEfUY1Mw4UqCc5Y8L4Stg==,
+      }
+    dependencies:
+      '@types/hast': 3.0.4
+      hastscript: 8.0.0
+      web-namespaces: 2.0.1
+    dev: false
+
+  /hast-util-from-html-isomorphic@2.0.0:
+    resolution:
+      {
+        integrity: sha512-zJfpXq44yff2hmE0XmwEOzdWin5xwH+QIhMLOScpX91e/NSGPsAzNCvLQDIEPyO2TXi+lBmU6hjLIhV8MwP2kw==,
+      }
+    dependencies:
+      '@types/hast': 3.0.4
+      hast-util-from-dom: 5.0.0
+      hast-util-from-html: 2.0.1
+      unist-util-remove-position: 5.0.0
+    dev: false
+
   /hast-util-from-html@2.0.1:
     resolution:
       {
@@ -7601,7 +7627,6 @@ packages:
       parse5: 7.1.2
       vfile: 6.0.1
       vfile-message: 4.0.2
-    dev: false
 
   /hast-util-from-parse5@8.0.1:
     resolution:
@@ -10590,7 +10615,7 @@ packages:
       '@types/hast': 3.0.4
       hast-util-from-html: 2.0.1
       unified: 11.0.4
-    dev: false
+    dev: true
 
   /rehype-stringify@10.0.0:
     resolution:
@@ -11896,6 +11921,16 @@ packages:
       }
     dependencies:
       '@types/unist': 3.0.2
+
+  /unist-util-remove-position@5.0.0:
+    resolution:
+      {
+        integrity: sha512-Hp5Kh3wLxv0PHj9m2yZhhLt58KzPtEYKQQ4yxfYFEO7EvHwzyDYnduhHnY1mDxoqr7VUwVuHXk9RXKIiYS1N8Q==,
+      }
+    dependencies:
+      '@types/unist': 3.0.2
+      unist-util-visit: 5.0.0
+    dev: false
 
   /unist-util-stringify-position@2.0.3:
     resolution:

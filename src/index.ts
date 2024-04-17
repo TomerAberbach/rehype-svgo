@@ -17,9 +17,8 @@
 import { visit } from 'unist-util-visit'
 import type { Element, Node, Root } from 'hast'
 import { toHtml } from 'hast-util-to-html'
-import rehypeParse from 'rehype-parse'
+import { fromHtmlIsomorphic as fromHtml } from 'hast-util-from-html-isomorphic'
 import type { Plugin } from 'unified'
-import { unified } from 'unified'
 import { optimize } from 'svgo'
 import type { Config } from 'svgo'
 import { find } from 'unist-util-find'
@@ -36,9 +35,9 @@ const rehypeSvgo: Plugin<
   const { svgoConfig } = options ?? {}
   return (tree: Root) =>
     visit(tree, { tagName: `svg` }, (node, index, parent) => {
-      const optimizedAst: Node = unified()
-        .use(rehypeParse, { space: `svg` })
-        .parse(optimize(toHtml(node, { space: `svg` }), svgoConfig).data)
+      const optimizedAst: Node = fromHtml(
+        optimize(toHtml(node, { space: `svg` }), svgoConfig).data,
+      )
 
       // Parsing may add extraneous html, head, and body tags. Find the actual
       // SVG element.
