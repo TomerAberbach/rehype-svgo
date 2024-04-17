@@ -35,11 +35,9 @@
   },
   "exports": {
     "types": "./dist/index.d.ts",
-    "require": "./dist/index.cjs",
-    "import": "./dist/index.js"
+    "default": "./dist/index.js"
   },
   "types": "./dist/index.d.ts",
-  "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "scripts": {
     "prepare": "tomer install",
