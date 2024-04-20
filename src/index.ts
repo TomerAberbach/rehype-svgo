@@ -21,7 +21,6 @@ import { fromHtmlIsomorphic as fromHtml } from 'hast-util-from-html-isomorphic'
 import type { Plugin } from 'unified'
 import { optimize } from 'svgo'
 import type { Config } from 'svgo'
-import { find } from 'unist-util-find'
 
 /**
  * A `rehype` plugin that optimizes all inline SVGs in the given HTML using
@@ -37,12 +36,10 @@ const rehypeSvgo: Plugin<
     visit(tree, { tagName: `svg` }, (node, index, parent) => {
       const optimizedAst: Node = fromHtml(
         optimize(toHtml(node, { space: `svg` }), svgoConfig).data,
+        { fragment: true },
       )
 
-      // Parsing may add extraneous html, head, and body tags. Find the actual
-      // SVG element.
-      const svgElement = find(optimizedAst, { tagName: `svg` })!
-      parent!.children.splice(index!, 1, svgElement as Element)
+      parent!.children.splice(index!, 1, optimizedAst as Element)
     })
 }
 
