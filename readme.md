@@ -9,12 +9,6 @@
   <a href="https://github.com/TomerAberbach/rehype-svgo/actions">
     <img src="https://github.com/TomerAberbach/rehype-svgo/workflows/CI/badge.svg" alt="CI" />
   </a>
-  <a href="https://unpkg.com/rehype-svgo/dist/index.js">
-    <img src="https://deno.bundlejs.com/?q=rehype-svgo&badge" alt="gzip size" />
-  </a>
-  <a href="https://unpkg.com/rehype-svgo/dist/index.js">
-    <img src="https://deno.bundlejs.com/?q=rehype-svgo&config={%22compression%22:{%22type%22:%22brotli%22}}&badge" alt="brotli size" />
-  </a>
 </div>
 
 <div align="center">
