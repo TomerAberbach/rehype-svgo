@@ -9,8 +9,14 @@
   <a href="https://github.com/TomerAberbach/rehype-svgo/actions">
     <img src="https://github.com/TomerAberbach/rehype-svgo/workflows/CI/badge.svg" alt="CI" />
   </a>
+  <a href="https://unpkg.com/rehype-svgo/dist/index.js">
+    <img src="https://deno.bundlejs.com/?q=rehype-svgo&badge" alt="gzip size" />
+  </a>
+  <a href="https://unpkg.com/rehype-svgo/dist/index.js">
+    <img src="https://deno.bundlejs.com/?q=rehype-svgo&config={%22compression%22:{%22type%22:%22brotli%22}}&badge" alt="brotli size" />
+  </a>
   <a href="https://github.com/sponsors/TomerAberbach">
-    <img src="https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86" alt="Sponsor">
+    <img src="https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86" alt="Sponsor" />
   </a>
 </div>
 
@@ -28,10 +34,10 @@ $ npm i rehype-svgo
 
 ```js
 import rehypeParse from 'rehype-parse'
-import rehypeSvgo from 'rehype-svgo'
 import rehypeStringify from 'rehype-stringify'
 import { read } from 'to-vfile'
 import { unified } from 'unified'
+import rehypeSvgo from 'rehype-svgo'
 
 const file = await unified()
   .use(rehypeParse)
@@ -59,11 +65,9 @@ Stars are always welcome!
 For bugs and feature requests,
 [please create an issue](https://github.com/TomerAberbach/rehype-svgo/issues/new).
 
-For pull requests, please read the
-[contributing guidelines](https://github.com/TomerAberbach/rehype-svgo/blob/main/contributing.md).
-
 ## License
 
-[Apache License 2.0](https://github.com/TomerAberbach/rehype-svgo/blob/main/license)
-
-This is not an official Google product.
+[MIT](https://github.com/TomerAberbach/rehype-svgo/blob/main/license-mit) ©
+[Tomer Aberbach](https://github.com/TomerAberbach) \
+[Apache 2.0](https://github.com/TomerAberbach/rehype-svgo/blob/main/license-apache) ©
+[Google](https://github.com/TomerAberbach/rehype-svgo/blob/main/notice-apache)
